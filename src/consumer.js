@@ -9,7 +9,7 @@ const consumer = kafka.consumer({
 });
 
 await consumer.subscribe({
-  topic: "user",
+  topic: "Race",
   fromBeginning: true,
 });
 
