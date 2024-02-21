@@ -1,6 +1,6 @@
 // messageController.js
-import { sendToKafka } from "../services/kafkaService.js";
-import { saveDataToMySQL } from "../models/databaseModel.js";
+import { sendToKafka } from "../services/statusService.js";
+import { saveDataToMySQL } from "../models/StatusModel.js";
 import multer from "multer";
 import path from "path";
 
@@ -34,7 +34,7 @@ export async function sendStatus(req, res) {
         kondisi_kendaraan,
         action,
         empty_load,
-        ketrangan,
+        keterangan,
         customer,
         posisi,
         tujuan,
@@ -51,13 +51,12 @@ export async function sendStatus(req, res) {
         kondisi_kendaraan,
         action,
         empty_load,
-        ketrangan,
+        keterangan,
         customer,
         posisi,
         tujuan,
         foto,
-        id_user,
-        foto
+        id_user
       );
       await saveDataToMySQL(
         id_kendaraan,
@@ -68,13 +67,12 @@ export async function sendStatus(req, res) {
         kondisi_kendaraan,
         action,
         empty_load,
-        ketrangan,
+        keterangan,
         customer,
         posisi,
         tujuan,
         foto,
-        id_user,
-        foto
+        id_user
       );
 
       res.status(200).json({ message: "Message sent successfully" });
