@@ -4,12 +4,10 @@ import { saveDataToMySQL } from "../models/databaseModel.js";
 
 export async function sendMessage(req, res) {
   try {
-    const { name, age, job } = req.body;
-    const key = String(Math.floor(Math.random() * 10) + 1);
-    const photoPath = req.file ? `assets/images/${req.file.filename}` : null;
+    const { name, age, job, foto } = req.body;
 
-    await sendToKafka(name, age, job, req.file);
-    await saveDataToMySQL(name, age, job, photoPath);
+    await sendToKafka(name, age, job, foto);
+    await saveDataToMySQL(name, age, job, foto);
 
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
