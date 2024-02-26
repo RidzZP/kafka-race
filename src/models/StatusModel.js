@@ -56,17 +56,20 @@ export async function updateDataInMySQL(
   action,
   empty_load,
   keterangan,
+  memo,
   customer,
   posisi,
   tujuan,
   photoPath,
-  id_user
+  id_user,
+  longitude,
+  latitude
 ) {
   const connection = await pool.getConnection();
 
   try {
     const sql =
-      "UPDATE kendaraanstatus SET no_polisi=?, id_pengemudi=?, nama_driver=?, id_msm=?, kondisi_kendaraan=?, action=?, empty_load=?, keterangan=?, customer=?, posisi=?, tujuan=?, foto=?, tgl_update=NOW(), id_user=? WHERE id_kendaraan=?";
+      "UPDATE kendaraanstatus SET no_polisi=?, id_pengemudi=?, nama_driver=?, id_msm=?, kondisi_kendaraan=?, action=?, empty_load=?, keterangan=?, memo=?, customer=?, posisi=?, tujuan=?, foto=?, tgl_update=NOW(), id_user=?, longitude=?, latitude=? WHERE id_kendaraan=?";
     const params = [
       no_polisi,
       id_pengemudi,
@@ -76,12 +79,15 @@ export async function updateDataInMySQL(
       action,
       empty_load,
       keterangan,
+      memo,
       customer,
       posisi,
       tujuan,
       photoPath,
       id_user,
       id_kendaraan,
+      longitude,
+      latitude,
     ];
 
     const [results] = await connection.query(sql, params);

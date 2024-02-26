@@ -101,10 +101,13 @@ export async function updateStatus(req, res) {
         action,
         empty_load,
         keterangan,
+        memo,
         customer,
         posisi,
         tujuan,
         id_user,
+        longitude,
+        latitude,
       } = req.body;
       const foto = req.file.filename;
 
@@ -118,29 +121,37 @@ export async function updateStatus(req, res) {
         action,
         empty_load,
         keterangan,
+        memo,
         customer,
         posisi,
         tujuan,
         foto,
-        id_user
+        id_user,
+        longitude,
+        latitude
       );
 
-      await updateDataInMySQL(
-        id_kendaraan,
-        no_polisi,
-        id_pengemudi,
-        nama_driver,
-        id_msm,
-        kondisi_kendaraan,
-        action,
-        empty_load,
-        keterangan,
-        customer,
-        posisi,
-        tujuan,
-        foto,
-        id_user
-      );
+      setTimeout(async () => {
+        await updateDataInMySQL(
+          id_kendaraan,
+          no_polisi,
+          id_pengemudi,
+          nama_driver,
+          id_msm,
+          kondisi_kendaraan,
+          action,
+          empty_load,
+          keterangan,
+          memo,
+          customer,
+          posisi,
+          tujuan,
+          foto,
+          id_user,
+          longitude,
+          latitude
+        );
+      }, 1 * 60 * 1000);
 
       res.status(200).json({ message: "Message sent successfully" });
     });

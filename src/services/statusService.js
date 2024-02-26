@@ -11,11 +11,14 @@ export async function sendToKafka(
   action,
   empty_load,
   keterangan,
+  memo,
   customer,
   posisi,
   tujuan,
   foto,
-  id_user
+  id_user,
+  longitude,
+  latitude
 ) {
   try {
     await producer.connect();
@@ -37,11 +40,14 @@ export async function sendToKafka(
             action,
             empty_load,
             keterangan,
+            memo,
             customer,
             posisi,
             tujuan,
             foto,
             id_user,
+            longitude,
+            latitude,
             key,
           }),
         },
