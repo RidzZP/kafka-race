@@ -3,6 +3,7 @@ import { sendToKafka } from "../services/statusService.js";
 import { saveDataToMySQL, updateDataInMySQL } from "../models/StatusModel.js";
 import multer from "multer";
 import path from "path";
+import fs from "fs";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -109,7 +110,17 @@ export async function updateStatus(req, res) {
         longitude,
         latitude,
       } = req.body;
-      const foto = req.file.filename;
+      const foto = req.file ? req.file.filename : null;
+
+      const logMessage = JSON.stringify(req.body, null, 2);
+
+      console.log("Request Body:", req.body);
+
+      fs.appendFile("request_logs.txt", logMessage + "\n", (err) => {
+        if (err) {
+          console.error("Error writing to log file:", err);
+        }
+      });
 
       await sendToKafka(
         id_kendaraan,
