@@ -1,0 +1,161 @@
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "1709173119187.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "fotoPath": "assets\\images\\race\\1709173187370.png",
+  "fotoFilename": "1709173187370.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "assets\\images\\race\\1709173439020.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "assets\\images\\race\\1709173570368.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "assets\\images\\race\\1709173579727.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "assets/images/race/1709173642162.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "assets/images/race/1709173828062.png"
+}
+
+{
+  "id_kendaraan": "123",
+  "no_polisi": "statusNewlagi",
+  "id_pengemudi": "222",
+  "nama_driver": "Doe",
+  "id_msm": "123",
+  "kondisi_kendaraan": "No Ready",
+  "action": "1",
+  "empty_load": "on Process",
+  "keterangan": "On Process penyerahan SM",
+  "memo": "this",
+  "customer": "pt",
+  "posisi": "sudah tiba sekarang",
+  "tujuan": "IBF Cicalengka",
+  "id_user": "1",
+  "longitude": "123",
+  "latitude": "123",
+  "foto": "assets/images/race/1709173852755.png"
+}
+

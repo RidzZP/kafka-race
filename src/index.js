@@ -6,6 +6,10 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("<h1>kafka Started</h1>");
+});
+
 app.use("/send-message", messageRoutes);
 
 app.listen(3000, () => {

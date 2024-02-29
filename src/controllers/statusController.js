@@ -1,6 +1,6 @@
 // statusController.js
 import { sendToKafka } from "../services/statusService.js";
-import { saveDataToMySQL, updateDataInMySQL } from "../models/StatusModel.js";
+import { saveDataToMySQL } from "../models/StatusModel.js";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
@@ -36,87 +36,26 @@ export async function sendStatus(req, res) {
         action,
         empty_load,
         keterangan,
-        customer,
-        posisi,
-        tujuan,
-        id_user,
-      } = req.body;
-      const foto = req.file.filename;
-
-      await sendToKafka(
-        id_kendaraan,
-        no_polisi,
-        id_pengemudi,
-        nama_driver,
-        id_msm,
-        kondisi_kendaraan,
-        action,
-        empty_load,
-        keterangan,
-        customer,
-        posisi,
-        tujuan,
-        foto,
-        id_user
-      );
-      await saveDataToMySQL(
-        id_kendaraan,
-        no_polisi,
-        id_pengemudi,
-        nama_driver,
-        id_msm,
-        kondisi_kendaraan,
-        action,
-        empty_load,
-        keterangan,
-        customer,
-        posisi,
-        tujuan,
-        foto,
-        id_user
-      );
-
-      res.status(200).json({ message: "Message sent successfully" });
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-}
-
-export async function updateStatus(req, res) {
-  try {
-    upload(req, res, async function (err) {
-      if (err instanceof multer.MulterError) {
-        return res.status(400).json({ error: err.message });
-      } else if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-
-      const {
-        id_kendaraan,
-        no_polisi,
-        id_pengemudi,
-        nama_driver,
-        id_msm,
-        kondisi_kendaraan,
-        action,
-        empty_load,
-        keterangan,
         memo,
         customer,
         posisi,
-        tujuan,
-        id_user,
         longitude,
         latitude,
+        tujuan,
+        id_user,
       } = req.body;
-      const foto = req.file ? req.file.filename : null;
 
-      const logMessage = JSON.stringify(req.body, null, 2);
+      const fotoPath = req.file.path.replace(/\\/g, "/");
+
+      const logMessage = JSON.stringify(
+        { ...req.body, foto: fotoPath },
+        null,
+        2
+      );
 
       console.log("Request Body:", req.body);
 
-      fs.appendFile("request_logs.txt", logMessage + "\n", (err) => {
+      fs.appendFile("request_logs.txt", logMessage + "\n\n", (err) => {
         if (err) {
           console.error("Error writing to log file:", err);
         }
@@ -135,15 +74,15 @@ export async function updateStatus(req, res) {
         memo,
         customer,
         posisi,
-        tujuan,
-        foto,
-        id_user,
         longitude,
-        latitude
+        latitude,
+        tujuan,
+        fotoPath,
+        id_user
       );
 
       setTimeout(async () => {
-        await updateDataInMySQL(
+        await saveDataToMySQL(
           id_kendaraan,
           no_polisi,
           id_pengemudi,
@@ -156,11 +95,11 @@ export async function updateStatus(req, res) {
           memo,
           customer,
           posisi,
-          tujuan,
-          foto,
-          id_user,
           longitude,
-          latitude
+          latitude,
+          tujuan,
+          fotoPath,
+          id_user
         );
       }, 1 * 60 * 1000);
 

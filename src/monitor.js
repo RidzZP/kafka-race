@@ -11,7 +11,7 @@ const bytesToMB = (bytes) => (bytes / (1024 * 1024)).toFixed(2);
 
 const run = async () => {
   await consumer.connect();
-  await consumer.subscribe({ topic: "user", fromBeginning: true });
+  await consumer.subscribe({ topic: "Race", fromBeginning: true });
 
   await consumer.run({
     eachBatch: async ({ batch }) => {
