@@ -37,7 +37,7 @@ const runConsumer = async () => {
 
       const [existingData] = await connection.query(
         "SELECT * FROM kendaraanstatus WHERE id_msm = ? AND empty_load = ?",
-        [value.id_msm]
+        [value.id_msm, value.empty_load]
       );
 
       if (existingData.length > 0) {
