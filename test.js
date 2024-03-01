@@ -32,7 +32,7 @@ async function kirimDataRace(id_msm, index) {
 }
 
 function loopingData() {
-  let id_msm = 100;
+  let id_msm = 0;
   for (let index = 0; index < 100; index++) {
     const element = kirimDataRace(id_msm++, index);
     console.log(element);
